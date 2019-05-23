@@ -38,10 +38,11 @@ public class GestorLloguersLite {
 		System.out.println("Lloguers: <<num de lloguers del client>> " + cliente.totalLloguer(cliente));
 
 		for( int i = 0; i < cliente.totalLloguer(cliente); i++) {
-			
 			System.out.println("\nVehicle «marca del vehícle del primer lloguer» «model»");
 			System.out.println("Marca: " + cliente.getLloguers().get(i).getVehicle().getMarca());
 			System.out.println("Model: " + cliente.getLloguers().get(i).getVehicle().getModel());
+			System.out.println("data d'inici: " + cliente.getLloguers().get(i).getData()); 	
+			System.out.println("dies llogats: " + cliente.getLloguers().get(i).getDies());     
 		}
 	}
 }
