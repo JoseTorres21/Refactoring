@@ -1,4 +1,4 @@
-package Ex3;
+package src.Ex3;
 
 public class Vehicle {
 	private String model;

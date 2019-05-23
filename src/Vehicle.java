@@ -1,4 +1,5 @@
-
+package src;
+//Ejercicio2
 public class Vehicle {
 	private String model;
 	private String marca;

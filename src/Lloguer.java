@@ -1,5 +1,7 @@
-import java.util.Date;
+package src;
 
+import java.util.Date;
+//Ejercicio2
 public class Lloguer {
 	private Date data;
 	private int dies;

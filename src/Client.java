@@ -1,5 +1,7 @@
-import java.util.ArrayList;
+package src;
 
+import java.util.ArrayList;
+//Ejercicio2
 public class Client {
 	private String nif;
 	private String nom;
