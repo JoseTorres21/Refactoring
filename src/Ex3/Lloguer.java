@@ -51,4 +51,28 @@ public class Lloguer {
 	public void eliminaLloguer() {
 		setVehicle(null);
 	}
+	
+	public double quantitat () {
+		double quantitat = 0;
+		switch(getVehicle().getCategoria()) {
+		case Vehicle.BASIC:
+			quantitat = quantitat + 3;
+			if(getDies() > 3) {
+				quantitat = quantitat + (getDies() -3) * 1.5;
+			}
+			break;
+
+		case Vehicle.GENERAL:
+			quantitat = quantitat + 4;
+			if(getDies() > 2) {
+				quantitat = quantitat + (getDies() -2) * 2.5;
+			}
+			break;
+
+		case Vehicle.LUXE:
+			quantitat = quantitat + getDies() * 6;
+			break;
+		}
+		return quantitat;
+	}
 }
