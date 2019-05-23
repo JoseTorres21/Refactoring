@@ -32,7 +32,7 @@ public class TestInformeClient {
 		C1.afegeix(Ll2);
 		C1.afegeix(Ll3);
 
-		Assert.assertEquals(C1.informe(),"Informe de lloguers del client José Torres Ordoñez (546669520X)\n" + 
+		assertEquals(C1.informe(),"Informe de lloguers del client José Torres Ordoñez (546669520X)\n" + 
 				"\tSusuki Madagascar: 100.0€\n" + 
 				"\tMercedes Benk: 199.0€\n"     + 
 				"\tHonda Tunda: 720.0€\n"       + 
