@@ -1,5 +1,5 @@
 package src.Ex3;
-//==Ejericio5==
+//Ejericio5
 import org.junit.*;
 import static org.junit.Assert.*;    // importa una classe static
 import java.text.SimpleDateFormat;
