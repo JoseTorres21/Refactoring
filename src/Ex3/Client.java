@@ -61,7 +61,8 @@ public class Client {
 
 			// afegeix lloguers freqüents
 			//bonificacions ++;
-			bonificacions = bonificacions + bonificacionsDeLloguer(lloguer);
+			//bonificacions = bonificacions + bonificacionsDeLloguer(lloguer);
+			bonificacions = bonificacions + lloguer.bonificacions();
 
 
 			// composa els resultats d'aquest lloguer
@@ -79,7 +80,7 @@ public class Client {
 		return resultat;
 	}
 
-	private int bonificacionsDeLloguer(Lloguer lloguer) {
+	/*private int bonificacionsDeLloguer(Lloguer lloguer) {
 		int bonificacions = 0;
 		// afegeix bonificació per dos dies de lloguer de Luxe
 		if (lloguer.getVehicle().getCategoria() == Vehicle.LUXE &&
@@ -87,5 +88,5 @@ public class Client {
 			bonificacions ++;
 		}
 		return bonificacions;
-	}
+	}*/
 }

@@ -51,7 +51,7 @@ public class Lloguer {
 	public void eliminaLloguer() {
 		setVehicle(null);
 	}
-	
+
 	public double quantitat () {
 		double quantitat = 0;
 		switch(getVehicle().getCategoria()) {
@@ -74,5 +74,14 @@ public class Lloguer {
 			break;
 		}
 		return quantitat;
+	}
+
+	public int bonificacions() {
+		// TODO Auto-generated method stub
+		int bonificacions = 0;
+		if (vehicle.getCategoria() == Vehicle.LUXE && dies > 1) {
+			bonificacions++;
+		}
+		return bonificacions;
 	}
 }
