@@ -70,7 +70,7 @@ public class TestInformeClient {
 		equals("Informe de lloguers del client José Torres Ordoñez (546669520X)\n" + 
 				"\tSusuki Madagascar: 70.0€\n" + 
 				"\tImport a pagar: 70.0€\n"   + 
-				"\tPunts guanyats: 2\n" + C1.informe());	
+				"\tPunts guanyats: 2\n" + C1.informe());
 	}
 
 	@Test
