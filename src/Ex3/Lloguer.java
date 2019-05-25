@@ -58,7 +58,7 @@ public class Lloguer {
 		setVehicle(null);
 	}
 
-	public double quantitat () {
+	public double PreuCost () {
 		double quantitat = 0;
 		switch(getVehicle().getCategoria()) {
 		case Vehicle.BASIC:

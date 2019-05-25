@@ -70,7 +70,7 @@ public class Client {
 		// TODO Auto-generated method stub
 		double total = 0;
 		for (Lloguer lloguer: lloguers){
-			total = total + lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST;
+			total = total + lloguer.PreuCost() * EUROS_PER_UNITAT_DE_COST;
 		}
 		return total;
 	}
@@ -97,7 +97,7 @@ public class Client {
 					lloguer.getVehicle().getMarca() +
 					" " +
 					lloguer.getVehicle().getModel() + ": " +
-					(lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
+					(lloguer.PreuCost() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
 		}
 		return resultat;
 	}
