@@ -52,34 +52,25 @@ public class Client {
 	}
 
 	public String informe() {
-		double total = 0;
 		int bonificacions = 0;
 		String resultat = "Informe de lloguers del client " +
 				getNom() +
 				" (" + getNif() + ")\n";
 		for (Lloguer lloguer: lloguers) {
-
-			// afegeix lloguers freqüents
-			//bonificacions ++;
-			//bonificacions = bonificacions + bonificacionsDeLloguer(lloguer);
-			bonificacions = bonificacions + lloguer.bonificacions();
-
-
+			bonificacions += lloguer.bonificacions();
 			// composa els resultats d'aquest lloguer
 			resultat += "\t" +
 					lloguer.getVehicle().getMarca() +
 					" " +
 					lloguer.getVehicle().getModel() + ": " +
 					(lloguer.quantitat() * 30) + "€" + "\n";
-			total += lloguer.quantitat() * 30;
 		}
 
 		// afegeix informació final
-		resultat += "Import a pagar: " + total + "€\n" +
+		resultat += "Import a pagar: " + importTotal() + "€\n" +
 				"Punts guanyats: " + bonificacions + "\n";
 		return resultat;
 	}
-
 	/*private int bonificacionsDeLloguer(Lloguer lloguer) {
 		int bonificacions = 0;
 		// afegeix bonificació per dos dies de lloguer de Luxe
@@ -89,4 +80,13 @@ public class Client {
 		}
 		return bonificacions;
 	}*/
+
+	private double importTotal() {
+		// TODO Auto-generated method stub
+        double total = 0;
+        for (Lloguer lloguer: lloguers){
+            total = total + lloguer.quantitat() * 30;
+        }
+		return total;
+	}
 }
