@@ -39,7 +39,7 @@ public class TestInformeClient {
 				"\tImport a pagar: 1019.0€\n"   + 
 				"\tPunts guanyats: 7\n"+ C1.informe());	
 	}
-	
+
 	@Test
 	public void Clientasinlloguer() {
 		Client C1 = new Client("546669520X","José","665587800");
@@ -113,6 +113,21 @@ public class TestInformeClient {
 				"\tSusuki Madagascar: 70.0€\n" + 
 				"\tImport a pagar: 70.0€\n"   + 
 				"\tPunts guanyats: 2\n" + C1.informe());	
+	}
+
+	@Test
+	public void InformeHTML(){
+		Client C1 = new Client("546669520X","Stefan","665587807");
+		equals("<h1>Informe de lloguers</h1>\n" +
+				"<p>Informe de lloguers del client <em>José Torres Ordoñez</em> (<strong>54766820x</strong>)</p>\n" +
+				"<table>\n" +
+				"<tr><td><strong>Marca</strong></td><td><strong>Model</strong></td><td><strong>Import</strong></td></tr>     <tr><td>Tata</td><td>Vista</td><td>90.0€</td></tr>\n" +
+				"<tr><td>Mercedes</td><td>Bend</td><td>100.0€</td></tr>\n" +
+				"<tr><td>Honda</td><td>Tunda</td><td>300.0€</td></tr>\n" +
+				"</table>\n" +
+				"<p>Import a pagar: <em>490.0€</em></p>\n" +
+				"<p>Punts guanyats: <em>4</em></p>" + C1.versionHTML());
+
 	}
 }
 

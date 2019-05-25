@@ -107,4 +107,31 @@ public class Client {
 		return "Import a pagar: " + importTotal() + "€\n" +
 		"Punts guanyats: " + bonificacionsTotals() + "\n";
 	}
+
+	public String versionHTML() {
+		// TODO Auto-generated method stub
+		return composaCapsaleraHTML() + composaDetalleHTML() + composaPreuHTML();
+	}
+
+	public String composaCapsaleraHTML() {
+		// TODO Auto-generated method stub
+		return "<h1>Informe de lloguers<h1>\n" +
+		"<p>Informe de lloguers del client <em>" + nom + "</em> (<strong>" + nif + "</strong>)</p>\n";
+	}
+
+	public String composaDetalleHTML() {
+		// TODO Auto-generated method stub
+		String resultat = "";
+		for (Lloguer lloguer : lloguers) {
+			resultat += "<tr><td>" + lloguer.getVehicle().getMarca() + "</td><td>" + lloguer.getVehicle().getModel() + "</td><td>" +
+					lloguer.PreuCost() * EUROS_PER_UNITAT_DE_COST + "€</td></tr>\n";
+		}
+		return resultat;
+	}
+
+	public String composaPreuHTML() {
+		// TODO Auto-generated method stub
+		return "<p>Import a pagar: <em>" + importTotal() + "€</em></p>\n" + 
+		"<p>Punts guanyats: <em>" + bonificacionsTotals() + "</em></p>\n";
+	}
 }
