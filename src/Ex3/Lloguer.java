@@ -3,6 +3,12 @@ package src.Ex3;
 import java.util.Date;
 
 public class Lloguer {
+	private static final double COST_QUANTITAT_BASIC = 3;
+	private static final int UNITAT_COST__BASIC = 1;
+	private static final double COST_QUANTITAT_GENERAL = 4;
+	private static final int UNITAT_COST__GENERAL = 2;
+	private static final int COST_QUANTITAT_LUXE = 6;
+	
 	private Date data;
 	private int dies;
 	private Vehicle vehicle;
@@ -56,21 +62,21 @@ public class Lloguer {
 		double quantitat = 0;
 		switch(getVehicle().getCategoria()) {
 		case Vehicle.BASIC:
-			quantitat = quantitat + 3;
-			if(getDies() > 3) {
-				quantitat = quantitat + (getDies() -3) * 1.5;
+			quantitat = quantitat + COST_QUANTITAT_BASIC;
+			if(getDies() > COST_QUANTITAT_BASIC) {
+				quantitat = quantitat + (getDies() -UNITAT_COST__BASIC) * 1.5;
 			}
 			break;
 
 		case Vehicle.GENERAL:
-			quantitat = quantitat + 4;
-			if(getDies() > 2) {
-				quantitat = quantitat + (getDies() -2) * 2.5;
+			quantitat = quantitat + COST_QUANTITAT_GENERAL;
+			if(getDies() > COST_QUANTITAT_GENERAL) {
+				quantitat = quantitat + (getDies() -UNITAT_COST__GENERAL) * 2.5;
 			}
 			break;
 
 		case Vehicle.LUXE:
-			quantitat = quantitat + getDies() * 6;
+			quantitat = quantitat + getDies() * COST_QUANTITAT_LUXE;
 			break;
 		}
 		return quantitat;
