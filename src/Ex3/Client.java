@@ -1,8 +1,9 @@
 package src.Ex3;
 
 import java.util.ArrayList;
-//Ejerccio 18 Literals constants
+
 public class Client {
+	private static final double EUROS_PER_UNITAT_DE_COST = 30;
 	private String nif;
 	private String nom;
 	private String telefon;
@@ -52,22 +53,7 @@ public class Client {
 	}
 
 	public String informe() {
-		String resultat = "Informe de lloguers del client " +
-				getNom() +
-				" (" + getNif() + ")\n";
-		for (Lloguer lloguer: lloguers) {
-			// composa els resultats d'aquest lloguer
-			resultat += "\t" +
-					lloguer.getVehicle().getMarca() +
-					" " +
-					lloguer.getVehicle().getModel() + ": " +
-					(lloguer.quantitat() * 30) + "€" + "\n";
-		}
-
-		// afegeix informació final
-		resultat += "Import a pagar: " + importTotal() + "€\n" +
-				"Punts guanyats: " + bonificacionsTotals() + "\n";
-		return resultat;
+		return composaCapsalera() + composaDetalle() + composaPreu();
 	}
 
 	/*private int bonificacionsDeLloguer(Lloguer lloguer) {
@@ -84,7 +70,7 @@ public class Client {
 		// TODO Auto-generated method stub
 		double total = 0;
 		for (Lloguer lloguer: lloguers){
-			total = total + lloguer.quantitat() * 30;
+			total = total + lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST;
 		}
 		return total;
 	}
@@ -95,5 +81,30 @@ public class Client {
 			bonificacions = bonificacions + lloguer.bonificacions();
 		}
 		return bonificacions;
+	}
+
+	private String composaCapsalera() {
+		// TODO Auto-generated method stub
+		return "Informe de lloguers del client " + getNom() + " (" + getNif() + ")\n";
+	}
+
+	private String composaDetalle() {
+		// TODO Auto-generated method stub
+		String resultat = " ";
+		// composa els resultats d'aquest lloguer
+		for (Lloguer lloguer: lloguers){
+			resultat += "\t" +
+					lloguer.getVehicle().getMarca() +
+					" " +
+					lloguer.getVehicle().getModel() + ": " +
+					(lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
+		}
+		return resultat;
+	}
+
+	private String composaPreu() {
+		// TODO Auto-generated method stub
+		return "Import a pagar: " + importTotal() + "€\n" +
+		"Punts guanyats: " + bonificacionsTotals() + "\n";
 	}
 }
